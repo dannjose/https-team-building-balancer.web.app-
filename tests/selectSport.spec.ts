@@ -11,12 +11,13 @@ test('Automate Team Building Flow', async ({ page }) => {
   // Select VolleyBall as the sport
   await page.locator('flutter-view').press('Tab');
   await page.locator('flutter-view').press('Tab');
-  await page.click('button:has-text("VolleyBall")'); 
-  
+  await page.locator('flutter-view').click();
+
   // Enter the number of players and teams
   await page.waitForURL('https://team-building-balancer.web.app/#/skills');
-  await page.fill('input[placeholder="Number of players"]', '2'); 
-  await page.fill('input[placeholder="Number of teams"]', '2'); 
+  await page.getByRole('textbox').nth(1).fill('100');
+  await page.locator('flutter-view').press('Tab');
+  await page.getByRole('textbox').fill('10');
   await page.click('button:has-text("Next")'); 
 
   // Generate teams
