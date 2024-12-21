@@ -1,7 +1,7 @@
 {
-    "url": "https://team-building-balancer.web.app/#/signin",
-    "credentials": {
-      "username": "danilo",
-      "password": "test123"
-    }
+  "url": "https://team-building-balancer.web.app/#/signin",
+  "credentials": {
+    "username": "test2@test.com",
+    "password": "test#123"
   }
+}
