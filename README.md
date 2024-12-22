@@ -21,24 +21,25 @@ Install Playwright and its dependencies:
 ```bash
 npm install @playwright/test
 npx playwright install
+
 Running Tests
 Run All Tests
-bash
-Copy code
 npx playwright test
-Run a Specific Test
-For example, to run the login test:
 
-bash
-Copy code
+Run a Specific Test
+npx playwright test path/to/your/test-file.spec.ts
+
+Running tests and generating html report
+List Reporter: Provides a detailed list of executed tests.
+npx playwright test --reporter=list
+
+HTML Reporter: Generates an interactive HTML report, which is useful for visual inspection.
+npx playwright test --reporter=html
 npx playwright test tests/signIn.spec.ts
+
 Debug a Test
 Use debug mode to step through your tests:
-
-bash
-Copy code
 npx playwright test tests/selectSport.spec.ts --debug
+
 Run with Verbose Logs
-bash
-Copy code
 DEBUG=pw:api npx playwright test
