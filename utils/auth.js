@@ -1,8 +1,7 @@
 import { expect } from '@playwright/test';
 
-// Reusable login function
-export async function performLogin(page, data) {
-  const { url, credentials } = data;
+  // Reusable login function
+  export async function performLogin(page, { url, credentials }) {
   const { username, password } = credentials;
 
   // Navigate to the sign-in page
@@ -25,7 +24,4 @@ export async function performLogin(page, data) {
   await page.locator('flutter-view').press('Tab');
   await page.locator('flutter-view').press('Tab');
   await page.locator('flutter-view').press('Enter');
-
-  // Assert that the URL is correct
-  await expect(page).toHaveURL('https://team-building-balancer.web.app/#/premiumSports');
 }

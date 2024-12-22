@@ -3,5 +3,9 @@
   "credentials": {
     "username": "test2@test.com",
     "password": "test#123"
+  },
+  "invalidCredentials": {
+    "username": "wrong@test.com",
+    "password": "wrong#123"
   }
 }

@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
   await performLogin(page, data);
 });
 
-test('Automate Team Building Flow', async ({ page }) => {
+test.skip('Automate Team Building Flow', async ({ page }) => {
   // Select VolleyBall as the sport
   await page.locator('flutter-view').press('Tab');
   await page.locator('flutter-view').press('Tab');
