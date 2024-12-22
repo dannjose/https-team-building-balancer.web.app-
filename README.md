@@ -22,7 +22,6 @@ Install Playwright and its dependencies:
 npm install @playwright/test
 npx playwright install
 
-Running Tests
 Run All Tests
 npx playwright test
 
@@ -33,7 +32,7 @@ Running tests and generating html report
 List Reporter: Provides a detailed list of executed tests.
 npx playwright test --reporter=list
 
-HTML Reporter: Generates an interactive HTML report, which is useful for visual inspection.
+HTML Reporter: Generates an interactive HTML report that is useful for visual inspection.
 npx playwright test --reporter=html
 npx playwright test tests/signIn.spec.ts
 
