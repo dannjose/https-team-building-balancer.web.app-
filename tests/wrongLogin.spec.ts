@@ -1,17 +1,14 @@
+// tests/yourTestFile.spec.js
 import { test, expect } from '@playwright/test';
 import data from '../fixtures/data.json';
 import { performLogin } from '../utils/auth';
+import { captureConsoleErrors } from '../utils/consoleUtils';
 
 test('Attempt to log in with invalid credentials and capture error message', async ({ page }) => {
   const { invalidCredentials, url } = data;
-  let errorMessage = '';
 
-  // It was necessary to capture the error message from the console logs and store it in a variable 
-  page.on('console', (msg) => {
-    if (msg.type() === 'error') {
-      errorMessage = msg.text();
-    }
-  });
+  // Initialize the console error capture
+  const errorMessages = captureConsoleErrors(page);
 
   // Navigate to the sign-in page
   await page.goto(url);
@@ -22,6 +19,8 @@ test('Attempt to log in with invalid credentials and capture error message', asy
   // Wait for a short duration to ensure the error message is logged
   await page.waitForTimeout(1000);
 
-  // This is not the best way to validate the error message, but it works for now, the status code indicate an error
-  expect(errorMessage).toContain('Failed to load resource: the server responded with a status of 400 ()');
+  // Assert that the expected error message is present
+  const expectedError = 'Failed to load resource: the server responded with a status of 400 ()';
+  const errorOccurred = errorMessages.some(msg => msg.includes(expectedError));
+  expect(errorOccurred).toBe(true);
 });
