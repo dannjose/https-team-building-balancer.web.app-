@@ -3,10 +3,10 @@ import data from '../fixtures/data.json';
 import { performLogin } from '../utils/auth';
 
 test('Sign in and verify redirection to Home page with essential elements', async ({ page }) => {
-  const { url, expectedRedirectUrl, credentials } = data;
+  const { signIn, expectedRedirectUrl, credentials } = data;
 
   // Perform login
-  await performLogin(page, { url, credentials });
+  await performLogin(page, { signIn, credentials });
 
   // Wait for navigation to complete
   await page.waitForURL(expectedRedirectUrl);

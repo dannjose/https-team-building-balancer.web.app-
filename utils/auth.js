@@ -1,11 +1,11 @@
 import { expect } from '@playwright/test';
 
   // Reusable login function
-  export async function performLogin(page, { url, credentials }) {
+  export async function performLogin(page, { signIn, credentials }) {
   const { username, password } = credentials;
 
   // Navigate to the sign-in page
-  await page.goto(url);
+  await page.goto(signIn);
 
   // Ensure the page has loaded
   await page.waitForLoadState('load');

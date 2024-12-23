@@ -1,5 +1,5 @@
 {
-  "url": "https://team-building-balancer.web.app/#/signin",
+  "signIn": "https://team-building-balancer.web.app/#/signin",
   "expectedRedirectUrl": "https://team-building-balancer.web.app/#/premiumSports",
   "credentials": {
     "username": "test2@test.com",

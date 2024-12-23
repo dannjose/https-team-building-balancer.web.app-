@@ -7,7 +7,7 @@ export class BasePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.url = data.url; 
+    this.url = data.signIn; 
   }
 
   async navigateToSignIn(): Promise<void> {
