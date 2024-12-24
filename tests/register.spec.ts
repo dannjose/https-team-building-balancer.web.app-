@@ -18,6 +18,10 @@ test.only('Register a new user and verify confirmation/error message', async ({ 
   // Fill up the form
   await registrationPage.fillUpForm();
 
+  // Assert that the page is redirected to the sign-in URL
+  const expectedUrl = signIn;
+  await expect(page).toHaveURL(expectedUrl);
+
   // Wait briefly to allow for any error or success messages to appear
   //await page.waitForTimeout(1000);
 
